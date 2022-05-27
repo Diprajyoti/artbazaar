@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>ArtBazaar - Login</title>
+    <!-- <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>-->
+    <link rel="stylesheet" href="{% static 'signin.css' %}">
+
+</head>
+<body>
+<form action="/signin/" method="POST">
+    {% csrf_token %}
+    <a href="/"> <img class="logo" src="{% static 'artbazaar_logo.png'%}"/></a>
+    <div class="imgcontainer">
+        <img src="{% static 'img_avatar2.png'%}" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="name" id="uname"required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" id ="psw" required>
+
+        <button type="submit">Login</button>
+        <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+</form>
+
+</body>
+</html>
